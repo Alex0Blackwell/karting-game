@@ -53,5 +53,6 @@ You probably wont break it.
 If you have questions I might know but I will definitely just search it up online.
 
 ## Miscellaneous
-
+### Blender
+Blender files are stored in the *./Blender* folder.
 ### Links
