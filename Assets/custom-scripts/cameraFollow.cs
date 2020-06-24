@@ -1,16 +1,33 @@
-﻿using UnityEngine;
+// credit: https://github.com/coderDarren/Unity3D-Cars
+
+using UnityEngine;
 
 public class cameraFollow : MonoBehaviour
 {
-  public Transform target;
-  public float smoothSpeed = 0.125f;
-  public Vector3 offset;  // so the camera isn't inside the target object
+  public void LookAtTarget()
+	{
+		Vector3 _lookDirection = objectToFollow.position - transform.position;
+		Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
+		transform.rotation = Quaternion.Lerp(transform.rotation, _rot, lookSpeed * Time.deltaTime);
+	}
 
-  void FixedUpdate() {
-    Vector3 desiredPosition = target.position + offset;
-    Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-    transform.position = smoothedPosition;
+	public void MoveToTarget()
+	{
+		Vector3 _targetPos = objectToFollow.position +
+							 objectToFollow.forward * offset.z +
+							 objectToFollow.right * offset.x +
+							 objectToFollow.up * offset.y;
+		transform.position = Vector3.Lerp(transform.position, _targetPos, followSpeed * Time.deltaTime);
+	}
 
-    transform.LookAt(target);
-  }
+	private void FixedUpdate()
+	{
+		LookAtTarget();
+		MoveToTarget();
+	}
+
+	public Transform objectToFollow;
+	public Vector3 offset;
+	public float followSpeed = 10;
+	public float lookSpeed = 10;
 }
