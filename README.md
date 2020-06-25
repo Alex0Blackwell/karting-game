@@ -38,21 +38,17 @@ To do this, you need to add it to your repo, commit it, and push it
 
 now it should appear as a merge request
 ### Update with remote
-Now each time someone makes an update, the master branch will change to have this new stuff  
-You want to make sure you also have this new stuff  
-So, you should keep your branch updated with the master branch  
-To do this:
+To update the branch you are on to the remote master branch:
 
-    git checkout master
-    git pull
-    git checkout your-branch-name
     git merge origin/master
 
 Other than that, just push from your own branch.
-You probably wont break it.
+You probably won't break it.
 If you have questions I might know but I will definitely just search it up online.
 
 ## Miscellaneous
 ### Blender
 Blender files are stored in the *./Blender* folder.
 ### Links
+- Absolute savior of a [video]("https://www.youtube.com/watch?v=j6_SMdWeGFI")
+  - Helped with camera following, car movement, and tire animation
