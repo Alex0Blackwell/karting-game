@@ -26,7 +26,9 @@ public class cameraFollow : MonoBehaviour
 		MoveToTarget();
 	}
 
+	// Getting a reference of the car
 	public Transform objectToFollow;
+	// Stores 3 floats (x, y, z) to offset the camera from the car
 	public Vector3 offset;
 	public float followSpeed = 10;
 	public float lookSpeed = 10;
