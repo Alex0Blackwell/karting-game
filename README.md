@@ -50,5 +50,7 @@ If you have questions I might know but I will definitely just search it up onlin
 ### Blender
 Blender files are stored in the *./Blender* folder.
 ### Links
-- Absolute savior of a [video]("https://www.youtube.com/watch?v=j6_SMdWeGFI")
+- Absolute savior of a [video](https://www.youtube.com/watch?v=j6_SMdWeGFI)
   - Helped with camera following, car movement, and tire animation
+- Glorious series [here](https://www.youtube.com/watch?v=ODVV3eUE5zM)
+  - Helped working out some of the car physics
