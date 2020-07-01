@@ -60,6 +60,6 @@ public class carMovement : MonoBehaviour {
 	public WheelCollider rearDriverW, rearPassengerW;
 	public Transform frontDriverT, frontPassengerT;
 	public Transform rearDriverT, rearPassengerT;
-	public float maxSteerAngle = 30;
-	public float motorForce = 50;
+	public float maxSteerAngle = 15;
+	public float motorForce = 500;
 }
