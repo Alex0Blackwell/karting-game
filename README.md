@@ -2,55 +2,46 @@
 
 ## Table of contents
 * [Overview](#overview)
-* [Using Git](#using-git)
-* [Miscellaneous](#miscellaneous)
+* [Examples](#examples)
+* [Technologies](#technologies)
+* [Usage](#usage)
+* [Limitations](#limitations)
 
 ## Overview
-This is a 3D, low-poly racing game made in Unity.
+This is a 3D, low-poly racing game made in Unity. You play as a kart and you race around the track trying to set a best time. The game keeps track of how many laps you have completed, as well as your all time best lap time and your current lap time.
 
-## Using Git
-To get this repository, you need to make it local on your computer. You can clone it with https (you have to enter your password and username each time you do anything) or clone it with ssh (you have to set up ssh on your computer before anything will work).
-Press the green button that says clone or download and get that link.
+## Examples
 
-Also you need git installed. Native on linux / mac, have to download on windows.
+> Screenshot of the game
 
-### Clone
-Go to the terminal with git installed and type:
+![Screenshot](.images/kartGame.png "Zoom!")
 
-    git clone thingyoucopied
+> Driving around the track
 
-To work on anything, make a branch.
+![Video](.images/kartvid.gif "The frame rate is bad because the gif. I swear!")
 
-### Make a branch
-to make this branch type:
+## Technologies
+- Unity 2019.3.1
+- Blender 2.83
+  - Blender files are stored in the *./Blender* folder.
 
-    git checkout -b your-branch-name
+## Usage
 
-Now you make your changes to the code.
-### Add to remote
-Once something is working, you should submit it to the master branch.
+This game can be played [here](https://simmer.io/@Alex0Blackwell/karting-game)!  
+This repository contains everything needed to get the project up and running on Unity. Just clone the repository and open the project in Unity to edit the game yourself.
 
-To do this, you need to add it to your repo, commit it, and push it
+## Limitations
 
-    git add .
-    git commit -m "message here"
-    git push origin your-branch-name
+- [ ] Multiplayer
+  - The game cannot be played online
+- [ ] ML Bots
+  - The game does not feature bots to race against
 
-now it should appear as a merge request
-### Update with remote
-To update the branch you are on to the remote master branch:
+## Contributors
+- *Daniel Ko*
+  - Car model, track model, ground model, work an car
+- *Alex Blackwell*
+  - Tree model, rock model, camera follow, car movement, lap system
 
-    git merge origin/master
-
-Other than that, just push from your own branch.
-You probably won't break it.
-If you have questions I might know but I will definitely just search it up online.
-
-## Miscellaneous
-### Blender
-Blender files are stored in the *./Blender* folder.
-### Links
-- Absolute savior of a [video](https://www.youtube.com/watch?v=j6_SMdWeGFI)
-  - Helped with camera following, car movement, and tire animation
-- Glorious series [here](https://www.youtube.com/watch?v=ODVV3eUE5zM)
-  - Helped working out some of the car physics
+## License
+Licensed under the [GNU General Public License v3.0](LICENSE).
