@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
   public float BestLapTime { get; private set; } = Mathf.Infinity;
 
@@ -16,8 +16,10 @@ public class player : MonoBehaviour
   private Transform checkpointsParent;
   private int checkpointCount;
   private int checkpointLayer;
+
   // Start is called before the first frame update
   void Awake() {
+
     checkpointsParent = GameObject.Find("Checkpoints").transform;
     checkpointCount = checkpointsParent.childCount;
     checkpointLayer = LayerMask.NameToLayer("Checkpoint");
@@ -58,5 +60,10 @@ public class player : MonoBehaviour
   void Update() {
     CurrentLapTime = lapTimerTimestamp > 0 ? Time.time - lapTimerTimestamp : 0;
 
-  }
+    }
+
+  /*public void ResetCurrentLap()
+  {
+      CurrentLapTime = 0;
+  }*/
 }
