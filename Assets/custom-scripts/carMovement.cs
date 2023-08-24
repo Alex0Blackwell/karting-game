@@ -6,21 +6,20 @@ using UnityEngine;
 
 public class carMovement : MonoBehaviour
 {
+    public GameObject mobileUI;
 
-    /*public void GetInput()
+#if UNITY_STANDALONE                            //Movement input for standalone platforms
+
+    public void GetInput()
     {
         m_horizontalInput = Input.GetAxis("Horizontal");
         m_verticalInput = -Input.GetAxis("Vertical");
-    }*/
+    }
 
-    /*private void UpdateInputFromTouch()
-    {
-        if (!(Input.touchCount > 0))
-        {
-            m_horizontalInput = 0f;
-            m_verticalInput = 0f;
-        }
-    }*/
+#endif
+
+#if UNITY_ANDROID || UNITY_IOS                  //Movement input for mobile platforms
+
 
     public void LeftButton()
     {
@@ -56,8 +55,9 @@ public class carMovement : MonoBehaviour
     {
         transform.position = startingPosition;
         transform.rotation = startingRotation;
-        //player.ResetCurrentLap();
     }
+
+#endif
 
     private void Steer()
     {
@@ -93,14 +93,23 @@ public class carMovement : MonoBehaviour
 
     private void Start()
     {
+#if UNITY_ANDROID || UNITY_IOS // Enables Mobile UI
+
+        mobileUI.SetActive(true);
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
+#endif
         startingPosition = transform.position;
         startingRotation = transform.rotation;
     }
 
     private void FixedUpdate()
     {
-        //GetInput();
-        //UpdateInputFromTouch();
+
+#if UNITY_STANDALONE
+        GetInput();
+#endif
+
         Steer();
         Accelerate();
         UpdateWheelPoses();

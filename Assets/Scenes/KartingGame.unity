@@ -631,7 +631,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 590.1001, y: 68.7}
+  m_AnchoredPosition: {x: 712, y: 69}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &127354747
@@ -2035,7 +2035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 712, y: 69}
+  m_AnchoredPosition: {x: 590.1001, y: 68.7}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &535639261
@@ -7107,12 +7107,12 @@ GameObject:
   - component: {fileID: 2052784631}
   - component: {fileID: 2052784630}
   m_Layer: 5
-  m_Name: Control Panel
+  m_Name: Mobile UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2052784628
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7354,7 +7354,7 @@ PrefabInstance:
     - target: {fileID: 5081115807816684112, guid: bb31bfa5c7a533349a5a9b9e7163ed8f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.217
+      value: 2.2169776
       objectReference: {fileID: 0}
     - target: {fileID: 5081115807816684112, guid: bb31bfa5c7a533349a5a9b9e7163ed8f,
         type: 3}
@@ -7364,7 +7364,7 @@ PrefabInstance:
     - target: {fileID: 5081115807816684112, guid: bb31bfa5c7a533349a5a9b9e7163ed8f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3304
+      value: 1.3303999
       objectReference: {fileID: 0}
     - target: {fileID: 5081115807816684112, guid: bb31bfa5c7a533349a5a9b9e7163ed8f,
         type: 3}
@@ -7516,6 +7516,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6132026244059891306, guid: bb31bfa5c7a533349a5a9b9e7163ed8f,
+        type: 3}
+      propertyPath: mobileUI
+      value: 
+      objectReference: {fileID: 2052784627}
     - target: {fileID: 6132026244059891316, guid: bb31bfa5c7a533349a5a9b9e7163ed8f,
         type: 3}
       propertyPath: m_Mass
