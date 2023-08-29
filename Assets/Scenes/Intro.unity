@@ -2532,10 +2532,10 @@ RectTransform:
   m_Father: {fileID: 1094565633}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 122.68}
-  m_SizeDelta: {x: -273.64886, y: -266.68585}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 109}
+  m_SizeDelta: {x: 417.02194, y: 108.323975}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696749988
 MonoBehaviour:
@@ -2550,7 +2550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.037570372, g: 0.03773582, b: 0.032573845, a: 0.392}
+  m_Color: {r: 0.037570372, g: 0.03773582, b: 0.032573845, a: 0.49019608}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3446,8 +3446,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000013351, y: -18.4}
-  m_SizeDelta: {x: 184.66153, y: 61.947052}
+  m_AnchoredPosition: {x: 0, y: -35.431}
+  m_SizeDelta: {x: 211.23578, y: 70.861725}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &978813956
 MonoBehaviour:
@@ -4750,12 +4750,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -4898,6 +4898,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 883b2e3090d5968488c0ba3d7933ee6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lapTimeEntryPrefab: {fileID: 0}
+  lapTimeListPanel: {fileID: 0}
+  spacing: 10
+  numberOfLaps: 5
+  lapTimes: {fileID: 0}
+  racePanel: {fileID: 0}
+  mobileUI: {fileID: 0}
 --- !u!114 &1283630502 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6132026244059891306, guid: bb31bfa5c7a533349a5a9b9e7163ed8f,
@@ -5353,8 +5360,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000013351, y: -113.2}
-  m_SizeDelta: {x: 184.66153, y: 61.947052}
+  m_AnchoredPosition: {x: -0.00000333786, y: -140}
+  m_SizeDelta: {x: 211.23578, y: 70.861725}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1331331293
 MonoBehaviour:
