@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -17,6 +18,15 @@ public class Player : MonoBehaviour
   private int checkpointCount;
   private int checkpointLayer;
 
+    public GameObject lapTimeEntryPrefab;
+    public Transform lapTimeListPanel;
+    private List<GameObject> lapTimeEntries = new List<GameObject>();
+    public float spacing = 10f;
+    public float numberOfLaps = 5;
+    public GameObject lapTimes;
+    public GameObject racePanel;
+    private float  tempLapTime;
+
   // Start is called before the first frame update
   void Awake() {
 
@@ -26,18 +36,39 @@ public class Player : MonoBehaviour
     // carController = GetComponent<carController>();
   }
 
-  void StartLap() {
-    Debug.Log("StartLap!");
+  void StartLap()
+    {
+        if(tempLapTime != LastLapTime )
+        {
+            tempLapTime = LastLapTime;
+        }
+        else
+        {
+            tempLapTime = LastLapTime = 0;
+        }
+        
+        AddLapTimeEntry(tempLapTime, CurrentLap);
+        Debug.Log("StartLap!");
     CurrentLap++;
     lastCheckpointPassed = 1;
     lapTimerTimestamp = Time.time;
-  }
+
+        if (CurrentLap == numberOfLaps + 1)
+        {
+            CurrentLap--;
+            Time.timeScale = 0;
+            lapTimes.SetActive(true);
+        }
+
+    }
 
   void EndLap() {
+
     LastLapTime = Time.time - lapTimerTimestamp;
     BestLapTime = Mathf.Min(LastLapTime, BestLapTime);
     Debug.Log("Lap time was " + LastLapTime);
     Debug.Log("Best time is " + BestLapTime);
+        
   }
 
   void OnTriggerEnter(Collider collider) {
@@ -62,8 +93,35 @@ public class Player : MonoBehaviour
 
     }
 
-  /*public void ResetCurrentLap()
-  {
-      CurrentLapTime = 0;
-  }*/
+    public void AddLapTimeEntry(float lapTime, int lapNumber)
+    {
+        if (lapNumber == 0)
+        {
+            return;
+        }
+
+        GameObject lapTimeEntry = Instantiate(lapTimeEntryPrefab, lapTimeListPanel);
+        Text lapTimeText = lapTimeEntry.GetComponent<Text>();
+        if(lapTime.ToString("F2") == "0.00")
+        {
+            lapTimeText.text = "Lap " + lapNumber + ": " + "DNF";
+        }
+        else
+        {
+            lapTimeText.text = "Lap " + lapNumber + ": " + lapTime.ToString("F2") + " seconds";
+        }
+
+        int lapCount = lapTimeListPanel.childCount;
+        Vector3 entryPosition = new Vector3(0, -lapCount * (lapTimeEntry.GetComponent<RectTransform>().rect.height + spacing), 0);
+        lapTimeEntry.GetComponent<RectTransform>().anchoredPosition = entryPosition;
+
+        // Adjust the scroll rect's content size to fit the new entry
+        RectTransform contentRect = lapTimeListPanel.GetComponent<RectTransform>();
+        contentRect.sizeDelta = new Vector2(contentRect.sizeDelta.x, (lapCount + 1) * (lapTimeEntry.GetComponent<RectTransform>().rect.height + spacing));
+    }
+
+    /*public void ResetCurrentLap()
+    {
+        CurrentLapTime = 0;
+    }*/
 }

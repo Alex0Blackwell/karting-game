@@ -2,6 +2,7 @@ using UnityEngine.UI;  // required for text
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -43,5 +44,20 @@ public class UIController : MonoBehaviour
 
 
   }
+
+    public float BestLap()
+    {
+        return bestLapTime;
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
 }
