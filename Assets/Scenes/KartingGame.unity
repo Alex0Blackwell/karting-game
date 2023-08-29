@@ -5249,6 +5249,7 @@ MonoBehaviour:
   numberOfLaps: 5
   lapTimes: {fileID: 1772543493}
   racePanel: {fileID: 1974697397}
+  mobileUI: {fileID: 2052784627}
 --- !u!114 &1283630502 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6132026244059891306, guid: bb31bfa5c7a533349a5a9b9e7163ed8f,

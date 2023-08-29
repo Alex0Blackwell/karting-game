@@ -45,14 +45,10 @@ public class UIController : MonoBehaviour
 
   }
 
-    public float BestLap()
-    {
-        return bestLapTime;
-    }
-
     public void StartGame()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1.0f;
     }
 
     public void QuitGame()

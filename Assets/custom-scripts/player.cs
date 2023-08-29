@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     public float numberOfLaps = 5;
     public GameObject lapTimes;
     public GameObject racePanel;
+    public GameObject mobileUI;
     private float  tempLapTime;
 
   // Start is called before the first frame update
@@ -58,6 +59,10 @@ public class Player : MonoBehaviour
             CurrentLap--;
             Time.timeScale = 0;
             lapTimes.SetActive(true);
+
+#if UNITY_ANDROID || UNITY_IOS
+            mobileUI.SetActive(false);
+#endif
         }
 
     }
